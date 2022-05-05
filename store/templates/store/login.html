@@ -1,0 +1,102 @@
+
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+{% load socialaccount %}
+<html>
+  <head>
+    <title>Login page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+  </head>
+  <body style="font-family: 'Cairo', sans-serif;">
+    {% if user.is_authenticated %}
+        <h1 style="text-align: center; color: wheat;">Welcome, {{ user.username }} !</h1>
+  </br>
+  <h1 style="text-align: center; color: wheat;">
+  <a style = " color: wheat;" href="{% url 'store' %}">Click here to shop</a>
+</h1>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+    {% else %}
+        <h1 style="text-align: center; color: wheat;">Login Page</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-8 mx-auto social-container my-2 order-md-1">
+            <button class="btn btn-danger  mb-2">
+              <a href= "{% url 'social:begin' 'google-oauth2' %}"
+              style="
+              color: white;
+              padding: 15px 250px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              border-radius: 12px;
+              width: 100%;
+          ">Login with google</a>
+          </button>
+            </br>
+
+
+
+          </div>
+      </div>
+    </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br> 
+
+    {% endif %}
+  </body>
+</html>
+{% endblock content %}

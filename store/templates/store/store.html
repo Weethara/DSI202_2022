@@ -1,0 +1,45 @@
+
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top" style="font-family: 'Cairo', sans-serif;">Top</button>
+
+  <div class="row" style="font-family: 'Cairo', sans-serif;">
+        {% for product in products %}
+        <div class="col-lg-4" style="font-family: 'Cairo', sans-serif;">
+            <img class="thumbnail" src="{{product.imageURL}}">
+          <div class="box-element product" style="font-family: 'Cairo', sans-serif;">
+              <h6><strong>{{product.name}}</strong></h6>
+              <hr>
+  
+              <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart" style="font-family: 'Cairo', sans-serif;">Add to Cart</button>
+
+              <h4 style="display: inline-block; float: right; font-family: 'Cairo', sans-serif;"><strong>${{product.price|floatformat:2}}</strong></h4>
+  
+           </div>
+       </div>
+  
+      {% endfor %}
+
+</div>
+
+
+{% endblock content %}
+
+
+
+
+</body>
+
+</html>
